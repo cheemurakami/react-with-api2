@@ -1,23 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { connect } from 'react-redux';
+import { makeApiCall } from './actions';
 
-function Animals() {
-  const [animals, setAnimals] = useState([]);
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
+function Animals(props) {
+  // const [animals, setAnimals] = useState([]);
+  // const [error, setError] = useState(null);
+  // const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    fetch("https://afternoon-headland-99155.herokuapp.com/api/v1/animals/search?kind=cat")
-    .then(response => response.json())
-    .then(
-      (jsonifiedResponse) => {
-        setIsLoaded(true);
-        setAnimals(jsonifiedResponse)
-      }
-    )
-    .catch((error) => {
-      setIsLoaded(true);
-      setError(error)
-    });
+    const { dispatch } = this.props
+    
     return () => {};
   }, []);
 
@@ -49,7 +41,15 @@ function Animals() {
   }
 }
 
-export default Animals;
+const mapStateToProps = state => {
+  return {
+    animals: state.animals,
+    isLoading: state.isLoading,
+    error: state.error
+  }
+}
+
+export default connect(mapStateToProps)(Animals);
 
 
 
