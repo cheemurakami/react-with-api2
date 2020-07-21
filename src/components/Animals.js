@@ -3,8 +3,12 @@ import { connect } from "react-redux";
 import { makeApiCall } from "./../actions";
 import { useHistory } from "react-router-dom";
 import * as a from "./../actions";
-import AnimalDetail from "./AnimalDetail";
 import { Link } from "react-router-dom";
+import Image from 'react-bootstrap/Image'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+
 
 function Animals(props) {
   console.log(props);
@@ -36,26 +40,32 @@ function Animals(props) {
   } else {
     return (
       <React.Fragment>
-        <h1>Cats ~ ^°∀°^ </h1>
-        <ul>
+        <h3 className="cats">Our Cats ~ ^°∀°^ </h3>
+        
+        <Container>
           {animals.map((animal, index) => (
-            <li key={index}>
+            <Row>
               <div>
-                <p>{animal.name}</p>
-                <Link to={`/animal/${animal.id}`}>
-                  <img
-                    id={index}
-                    width="25%"
-                    height="50%"
-                    src={animal.imgUrl}
-                    alt="photo of cat"
-                    onClick={() => handleClick(animal.id)}
-                  />
-                </Link>
+                  <p>{animal.name}</p>
+                  <Col xs={6} md={4}>
+                    <Link to={`/animal/${animal.id}`}>
+                      <Image
+                        id={index}
+                        src={animal.imgUrl}
+                        className="cat-image"
+                        alt="photo of cat"
+                        onClick={() => handleClick(animal.id)}
+                        thumbnail
+                      />
+                    </Link>
+                  </Col>
               </div>
-            </li>
+            </Row>
           ))}
-        </ul>
+          </Container>
+        <Link to="/newanimals">
+          <button>Add a new animal</button>
+        </Link>
       </React.Fragment>
     );
   }
@@ -63,9 +73,6 @@ function Animals(props) {
 
 const mapStateToProps = (state) => {
   return {
-    // animals: state.animals,
-    // isLoading: state.isLoading,
-    // error: state.error,
     selectedAnimalReducer: state.selectedAnimal,
     apiResponse: state.apiResponse,
   };
