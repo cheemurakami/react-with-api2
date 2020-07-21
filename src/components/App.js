@@ -1,6 +1,5 @@
 import React from 'react';
-// import Animal from './Animal';
-import Api from './Api';
+import Animals from './Animals';
 import '../App.css';
 import Header from './Header';
 
@@ -8,7 +7,7 @@ function App() {
   return (
     <React.Fragment>
     <Header />
-      <Api />
+      <Animals />
     </React.Fragment>
   );
 }

@@ -13,9 +13,10 @@ describe('Api reducer actions', () => {
     const animals = "A animal";
     expect(actions.getAnimalsSuccess(animals)).toEqual({
       type: c.GET_ANIMALS_SUCCESS,
-      animals: animals
+      animals
     });
   });
+
   it('getAnimalsFailure should create GET_ANIMALS_FAILURE action', () => {
     const error = "An error";
     expect(actions.getAnimalsFailure(error)).toEqual({

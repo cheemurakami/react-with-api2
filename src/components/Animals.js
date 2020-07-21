@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { connect } from 'react-redux';
-import { makeApiCall } from './actions';
+import { makeApiCall } from './../actions';
 
 function Animals(props) {
   // const [animals, setAnimals] = useState([]);
   // const [error, setError] = useState(null);
   // const [isLoaded, setIsLoaded] = useState(false);
+  const { error, isLoading, animals } = props;
 
   useEffect(() => {
-    const { dispatch } = this.props
-    
+    const { dispatch } = props
+    dispatch(makeApiCall());
     return () => {};
   }, []);
 
- 
+  console.log(animals)
   if (error) {
     return <React.Fragment>Error: {error.message} </React.Fragment>;
-  } else if (!isLoaded) {
+  } else if (isLoading) {
     return <React.Fragment>Loading...</React.Fragment>;
   } else {
     return (
