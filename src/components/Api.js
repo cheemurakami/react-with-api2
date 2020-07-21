@@ -36,10 +36,10 @@ function Animals() {
              
               <li key={index}>
                 <p>{animal.name}</p>
-                <p>Kind:{animal.kind}</p>
-                <p>Age:{animal.age}</p>
-                <p>Breed:{animal.breed}</p>
                 <img id={index} width="25%" height="50%" src={animal.imgUrl} alt="photo of cat" />
+                {/* <p>Kind:{animal.kind}</p>
+                <p>Age:{animal.age}</p>
+                <p>Breed:{animal.breed}</p> */}
               </li>
             ))}
           </p>
