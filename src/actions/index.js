@@ -29,3 +29,9 @@ export const getAnimalsFailure = (error) => ({
   error
 });
 
+export const selectAnimal = (animal) => ({
+  type: c.SELECT_ANIMAL,
+  animal
+});
+
+

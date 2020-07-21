@@ -5,11 +5,12 @@ import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import reducer from './reducers/api-reducer';
+// import reducer from './reducers/api-reducer';
 import middlewareLogger from './middleware/middleware-logger';
 import { Provider } from 'react-redux';
+import rootReducer from './reducers/index';
 
-const store = createStore(reducer, applyMiddleware(thunkMiddleware, middlewareLogger));
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware, middlewareLogger));
 
 ReactDOM.render(
   <Provider store={store}>
