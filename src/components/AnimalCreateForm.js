@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+
 
 function AnimalCreateForm() {
-  //curry!!!!!API post func
 
   function addCat(event){
     event.preventDefault();
@@ -14,30 +15,22 @@ function AnimalCreateForm() {
       imgUrl: event.target.imgUrl.value
     }
 
-    // const request = {
-    //   method: 'POST',
-    //   body: JSON.stringify(inputtedData),
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   }
-    // }
     console.log(inputtedData)
-    // fetch("https://afternoon-headland-99155.herokuapp.com/api/v1/animals/", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   mode: "no-cors",
-    //   body: JSON.stringify(inputtedData),
-    // })
-    // .then(response => response.json())
-    // .then(
-    //   (jsonifiedResponse) => {
-    //     console.log("SUCCESS:", jsonifiedResponse)
-    //   }
-    // ).catch((error) => {
-    //   console.log(error);
-    // })
+    fetch("https://afternoon-headland-99155.herokuapp.com/api/v1/animals/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(inputtedData),
+    })
+    .then(response => response.json())
+    .then(
+      (jsonifiedResponse) => {
+        console.log("SUCCESS:", jsonifiedResponse)
+      }
+    ).catch((error) => {
+      console.log(error);
+    })
   }
   
   return (
@@ -56,6 +49,8 @@ function AnimalCreateForm() {
         <button type="submit">Add</button>
       </form>
       
+      <div className="returnList"><Link to={"/"}>Return to Animals List</Link></div>
+
       
     </React.Fragment>
   )

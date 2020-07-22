@@ -8,6 +8,21 @@ import Image from 'react-bootstrap/Image'
 function AnimalDetail(props) {
   const { animal } = props;
   console.log(animal.selectedAnimal.name);
+
+  function deleteAnimal(){
+    fetch(`https://afternoon-headland-99155.herokuapp.com/api/v1/animals/${animal.selectedAnimal.id}`, {
+      method: "DELETE"
+    })
+    .then(response => response.json())
+    .then(
+      (jsonifiedResponse) => {
+        console.log("SUCCESS:", jsonifiedResponse)
+      }
+    ).catch((error) => {
+      console.log(error);
+    })
+      
+  }
   
 
   return (
@@ -22,7 +37,15 @@ function AnimalDetail(props) {
       <div className="returnList">
         <button>Take me with you</button>
       </div>
-      <div className="returnList"><Link to={"/"}>Return to Animals List</Link></div>
+      <div className="returnList">
+        <button onClick={deleteAnimal}>Delete me</button>
+      </div>
+      <div className="returnList">
+        <button>Edit me</button>
+      </div>
+      <div className="returnList">
+        <Link to={"/"}>Return to Animals List</Link>
+        </div>
     </React.Fragment>
   );
 }
