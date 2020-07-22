@@ -34,54 +34,29 @@ function AnimalCreateForm() {
   }
   
   return (
-    <React.Fragment>
-     <Form>
-        <Form.Group controlId="exampleForm.ControlInput1">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="name@example.com" />
-        </Form.Group>
-        <Form.Group controlId="exampleForm.ControlSelect1">
-          <Form.Label>Example select</Form.Label>
-          <Form.Control as="select">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>    
-          </Form.Control>
-        </Form.Group>
-        <Form.Group controlId="exampleForm.ControlSelect2">
-          <Form.Label>Example multiple select</Form.Label>
-          <Form.Control as="select" multiple>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </Form.Control>
-        </Form.Group>
-        <Form.Group controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Example textarea</Form.Label>
-          <Form.Control as="textarea" rows="3" />
-        </Form.Group>
-      </Form>
-      <form onSubmit={addCat}>
-        <input type="text" name="name" placeholder="Name"></input>
-        <br />
-        <input type="text" name="kind" placeholder="Cat"></input>
-        <br />
-        <input type="text" name="age" placeholder="Age"></input>
-        <br />
-        <input type="text" name="breed" placeholder="Breed"></input>
-        <br />
-        <input type="text" name="imgUrl" placeholder="Image URL"></input>
-        <br />
-        <button type="submit">Add</button>
-      </form>
-      
+    <React.Fragment>     
+      <div className='form-container'>
+        <div className='form-header'>Add a New Cat</div>
+        <Form onSubmit={addCat}>
+            <Form.Group controlId="name-input">
+              <Form.Control type="text" name="name" placeholder="name" />
+            </Form.Group>
+            <Form.Group controlId="kind-input">
+              <Form.Control type="text" name="kind" placeholder="Cat" />
+            </Form.Group>
+            <Form.Group controlId="age-input">
+              <Form.Control type="text" name="age" placeholder="Age" />
+            </Form.Group>
+            <Form.Group controlId="breed-input">
+              <Form.Control type="text" name="breed" placeholder="Breed" />
+            </Form.Group>
+            <Form.Group controlId="img-input">
+              <Form.Control type="text" name="imgUrl" placeholder="Image URL" />
+            </Form.Group>
+            <button type="submit">Add Cat</button>
+          </Form>
+        </div>
       <div className="returnList"><Link to={"/"}>Return to Animals List</Link></div>
-
-      
     </React.Fragment>
   )
 };

@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { render } from 'react-dom';
 import { useTransition, animated } from 'react-spring';
 import './../index.css'
+// import mission from './mission.jpg';
 
 
 function MissionStatement() {
@@ -30,14 +31,17 @@ function MissionStatement() {
   useEffect(() => void reset(), [])
 
   return (
-    <div>
+    <React.Fragment>
+    <div className="mission">
       {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
         <animated.div className="transitions-item" key={key} style={rest} onClick={reset}>
           <animated.div style={{ overflow: 'hidden', height: innerHeight }}>{item}</animated.div>
         </animated.div>
-      ))}
+        ))}
     </div>
+    </React.Fragment>
   )
 }
+
 
 export default MissionStatement;
