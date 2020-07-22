@@ -1,6 +1,7 @@
 import React from "react";
 import { Nav, NavDropdown, Form, FormControl, Button, Navbar } from "react-bootstrap/";
-import animal from './../animal.icon.png';
+import animal from './animal.icon.png';
+import animalHeader from './animalheader.png';
 
 
 
@@ -8,7 +9,7 @@ function Header() {
   return (
     <React.Fragment>
     
-      <Navbar bg="light" expand="lg" className='nav'>
+<Navbar bg="light" expand="lg" className='nav'>
   <Navbar.Brand href="/"><img src={animal} alt='animal'/></Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
@@ -29,10 +30,9 @@ function Header() {
 </Navbar>
 
       <div className="header1">
-       <img src='./../animalheader.png' alt='header'/>
-        <hr />
+      <img src={animalHeader} alt='header' className="header2"/>
       </div>
-
+      
     </React.Fragment>
   );
 }

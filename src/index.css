@@ -20,12 +20,18 @@ code {
 
 .header1{
   text-align: center;
-  margin-top: 150px;
+  margin-top:60px;
+
 }
 
-.mr-sm-2 {
-  margin-left:-80%;
+.header2{
+  width:100%;
+  margin-bottom: -50px;
+  display: inline-block;
+  overflow: hidden;
 }
+
+
 .cats{
   text-align: center;
 }
@@ -51,7 +57,7 @@ code {
 }
 .container{
   text-align: center;
-  
+  margin-top: 100px;
 }
 
 #nav-dropdown{
@@ -91,6 +97,22 @@ code {
   z-index: 9999;
 }
 
+.transitions-item {
+  overflow: hidden;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  margin-top:200px;
+  align-items: center;
+  font-size: 5em;
+  font-weight: 800;
+  text-transform: uppercase;
+  will-change: transform, opacity, height;
+  white-space: nowrap;
+  cursor: pointer;
+  line-height: 100px;
+}
 
 
 

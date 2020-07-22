@@ -1,7 +1,7 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react'
-import { render } from 'react-dom'
-import { useTransition, animated } from 'react-spring'
-import './styles.css'
+import React, { useRef, useState, useEffect, useCallback } from 'react';
+import { render } from 'react-dom';
+import { useTransition, animated } from 'react-spring';
+import './../index.css'
 
 
 function MissionStatement() {
@@ -22,9 +22,9 @@ function MissionStatement() {
     ref.current.map(clearTimeout)
     ref.current = []
     set([])
-    ref.current.push(setTimeout(() => set(['Apples', 'Oranges', 'Kiwis']), 2000))
-    ref.current.push(setTimeout(() => set(['Apples', 'Kiwis']), 5000))
-    ref.current.push(setTimeout(() => set(['Apples', 'Bananas', 'Kiwis']), 8000))
+    ref.current.push(setTimeout(() => set(['Rescue', 'Adopt', 'Care']), 2000))
+    ref.current.push(setTimeout(() => set(['Home', 'Love']), 5000))
+    ref.current.push(setTimeout(() => set(['Rescue', 'Adopt', 'Rehome']), 8000))
   }, [])
 
   useEffect(() => void reset(), [])

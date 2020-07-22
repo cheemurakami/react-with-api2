@@ -41,7 +41,7 @@ function Animals(props) {
   } else {
     return (
       <React.Fragment>
-        <h3 className="cats">Our Cats ~ ^°∀°^ </h3>
+        {/* <h3 className="cats">Our Cats ~ ^°∀°^ </h3> */}
         
         <Container className="container">
           <div className="row">

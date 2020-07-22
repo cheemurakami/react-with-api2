@@ -16,6 +16,7 @@ function AnimalDetail(props) {
     .then(response => response.json())
     .then(
       (jsonifiedResponse) => {
+        alert('DELETED')
         console.log("SUCCESS:", jsonifiedResponse)
       }
     ).catch((error) => {
@@ -41,11 +42,11 @@ function AnimalDetail(props) {
         <button onClick={deleteAnimal}>Delete me</button>
       </div>
       <div className="returnList">
-        <button>Edit me</button>
+        <Link to={"/editanimals"}>Edit me</Link>
       </div>
       <div className="returnList">
         <Link to={"/"}>Return to Animals List</Link>
-        </div>
+      </div>
     </React.Fragment>
   );
 }
