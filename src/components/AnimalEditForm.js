@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from "react-redux";
 import Image from 'react-bootstrap/Image'
+import { Form, Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 
@@ -39,13 +40,36 @@ function AnimalEditForm(props) {
 
   const updateMsg = () => {
     if(showUpdatedMsg){
-      return <p>curry Updated</p>
+      return <h2>curry Updated</h2>
+    } else {
+      return(
+        <div className='form-container'>
+          <div className='form-header'>Edit this cat</div>
+          <Form onSubmit={editCat}>
+              <Form.Group controlId="name-input">
+                <Form.Control type="text" name="name" placeholder="name" />
+              </Form.Group>
+              <Form.Group controlId="kind-input">
+                <Form.Control type="text" name="kind" placeholder="Cat" />
+              </Form.Group>
+              <Form.Group controlId="age-input">
+                <Form.Control type="text" name="age" placeholder="Age" />
+              </Form.Group>
+              <Form.Group controlId="breed-input">
+                <Form.Control type="text" name="breed" placeholder="Breed" />
+              </Form.Group>
+              <Form.Group controlId="img-input">
+                <Form.Control type="text" name="imgUrl" placeholder="Image URL" />
+              </Form.Group>
+              <button type="submit">Edit Cat</button>
+            </Form>
+        </div>
+      )
     }
   }
 
   return (
     <React.Fragment>
-      {updateMsg()}
       <div className="cat-detail">
         <h2>You are editing me</h2>
         <Image width="25%" height="50%" src={animal.selectedAnimal.imgUrl} alt="photo of cat" roundedCircle/>
@@ -53,19 +77,8 @@ function AnimalEditForm(props) {
           <p>Age: {animal.selectedAnimal.age}</p>
           <p>Breed:{animal.selectedAnimal.breed}</p>
       </div>
-      <form onSubmit={editCat}>
-        <input type="text" name="name" placeholder="Name"></input>
-        <br />
-        <input type="text" name="kind" placeholder="Cat"></input>
-        <br />
-        <input type="text" name="age" placeholder="Age"></input>
-        <br />
-        <input type="text" name="breed" placeholder="Breed"></input>
-        <br />
-        <input type="text" name="imgUrl" placeholder="Image URL"></input>
-        <br />
-        <button type="submit">Submit</button>
-      </form>
+      {updateMsg()}
+      
       <div className="returnList">
         <button><Link to={"/"}>Back to List</Link></button>
       </div>

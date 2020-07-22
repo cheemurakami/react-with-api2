@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { render } from 'react-dom';
+// import { render } from 'react-dom';
 import { useTransition, animated } from 'react-spring';
 import './../index.css'
-// import mission from './mission.jpg';
+import mission from './mission.jpg';
 
 
 function MissionStatement() {
@@ -24,14 +24,14 @@ function MissionStatement() {
     ref.current = []
     set([])
     ref.current.push(setTimeout(() => set(['Rescue', 'Adopt', 'Care']), 2000))
-    ref.current.push(setTimeout(() => set(['Home', 'Love']), 5000))
-    ref.current.push(setTimeout(() => set(['Rescue', 'Adopt', 'Rehome']), 8000))
+    ref.current.push(setTimeout(() => set(['Home', 'Love']), 50000))
+    ref.current.push(setTimeout(() => set(['Rescue', 'Adopt', 'Rehome']), 80000))
   }, [])
 
   useEffect(() => void reset(), [])
 
   return (
-    <React.Fragment>
+    <>
     <div className="mission">
       {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
         <animated.div className="transitions-item" key={key} style={rest} onClick={reset}>
@@ -39,9 +39,22 @@ function MissionStatement() {
         </animated.div>
         ))}
     </div>
-    </React.Fragment>
+    <div className='missionpic'>
+       <img src={mission} alt='shelter'/>
+    </div>
+    </>
   )
 }
+
+function PageDisplay() {
+
+    return (
+     <div className='missionpic'>
+       <img src={mission} alt='shelter'/>
+    </div>
+  
+    )
+  }
 
 
 export default MissionStatement;

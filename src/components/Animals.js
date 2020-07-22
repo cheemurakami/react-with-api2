@@ -68,9 +68,9 @@ function Animals(props) {
           ))}
           </div>
           </Container>
-        <Link to="/newanimals">
+        {/* <Link to="/newanimals">
           <button>Add a new animal</button>
-        </Link>
+        </Link> */}
       </React.Fragment>
     );
   }
