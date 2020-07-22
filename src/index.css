@@ -30,7 +30,8 @@ code {
 
 .cat-image {
    height: 250px;
-   width: 100%
+   width: 100%;
+   align-self: center;
 }
 
 .cat-image:hover {
@@ -40,11 +41,52 @@ code {
 .cat-detail {
   text-align: center;
 }
+.container{
+  text-align: center;
+}
 
-/* .row {
+.row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
+  /* width: 100%; */
   gap: 20px 5px;
-} */
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  /* column-count: 4; */
+  /* flex: 0 0 33.333333%; */
+  flex: 1 0 21%;
+}
+
+.animal-item {
+  padding: 4%;
+  box-sizing: border-box;
+  margin: 8px;
+  position: relative;
+}
+
+.animal-item div {
+ position: absolute;
+ text-align: center;
+ bottom: 0;
+ left: 0;
+ background: black;
+ color: white;
+ margin-bottom: 5px;
+ font-family: sans-serif;
+ opacity: 0;
+ visibility: hidden;
+ -webkit-transition: visibility 0s, opacity 0.5s linear; 
+ transition: visibility 0s, opacity 0.5s linear;
+}
+
+.animal-item:hover div {
+  width: 150px;
+  padding: 8px 15px;
+  visibility: visible;
+  opacity: 0.7; 
+}

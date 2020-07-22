@@ -17,7 +17,7 @@ function Header() {
 
     <div className="header1">
       <h1>Urban Tails Shelter</h1>
-      <p> Giving them a happy life.</p>
+      <p> Giving them a happy life.😸</p>
       <hr />
     </div>
     </React.Fragment>

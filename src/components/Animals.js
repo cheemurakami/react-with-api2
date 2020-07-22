@@ -42,12 +42,13 @@ function Animals(props) {
       <React.Fragment>
         <h3 className="cats">Our Cats ~ ^°∀°^ </h3>
         
-        <Container>
+        <Container className="container">
+          <div className="row">
           {animals.map((animal, index) => (
-            <Row>
-              <div>
+            <div className="column">
+              <div className="animal-item">
                   <p>{animal.name}</p>
-                  <Col xs={6} md={4}>
+                  {/* <Col s={10} md={4}> */}
                     <Link to={`/animal/${animal.id}`}>
                       <Image
                         id={index}
@@ -57,11 +58,15 @@ function Animals(props) {
                         onClick={() => handleClick(animal.id)}
                         thumbnail
                       />
+                      <div>{animal.name}</div>
                     </Link>
-                  </Col>
+                  {/* </Col> */}
+                
               </div>
-            </Row>
+            </div>
+            
           ))}
+          </div>
           </Container>
         <Link to="/newanimals">
           <button>Add a new animal</button>
