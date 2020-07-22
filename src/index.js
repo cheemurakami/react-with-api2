@@ -10,13 +10,15 @@ import middlewareLogger from './middleware/middleware-logger';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers/index';
 
+
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware, middlewareLogger));
+
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

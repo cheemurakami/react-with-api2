@@ -10,6 +10,7 @@ import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 
 
+
 function Animals(props) {
   console.log(props);
   // const [animals, setAnimals] = useState([]);
@@ -44,11 +45,11 @@ function Animals(props) {
         
         <Container className="container">
           <div className="row">
+
           {animals.map((animal, index) => (
             <div className="column">
               <div className="animal-item">
-                  <p>{animal.name}</p>
-                  {/* <Col s={10} md={4}> */}
+                  
                     <Link to={`/animal/${animal.id}`}>
                       <Image
                         id={index}
@@ -58,9 +59,8 @@ function Animals(props) {
                         onClick={() => handleClick(animal.id)}
                         thumbnail
                       />
-                      <div>{animal.name}</div>
                     </Link>
-                  {/* </Col> */}
+                    <div>{animal.name}</div>
                 
               </div>
             </div>

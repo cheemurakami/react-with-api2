@@ -13,13 +13,16 @@ function AnimalDetail(props) {
   return (
     <React.Fragment>
       <div className="cat-detail">
-        <h2>Cat Details</h2>
+        <h2>Kitty Info</h2>
         <Image width="25%" height="50%" src={animal.selectedAnimal.imgUrl} alt="photo of cat" roundedCircle/>
         <p>Name: {animal.selectedAnimal.name}</p>
         <p>Breed: {animal.selectedAnimal.breed}</p>
         <p>Age: {animal.selectedAnimal.age}</p>
       </div>
-      <div id="returnList"><Link to={"/"}>Return to Animals List</Link></div>
+      <div className="returnList">
+        <button>Take me with you</button>
+      </div>
+      <div className="returnList"><Link to={"/"}>Return to Animals List</Link></div>
     </React.Fragment>
   );
 }

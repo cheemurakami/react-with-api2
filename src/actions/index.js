@@ -3,17 +3,23 @@ import * as c from './ActionTypes';
 export const makeApiCall = () => {
   return dispatch => {
     dispatch(requestAnimals);
-    return fetch(`https://afternoon-headland-99155.herokuapp.com/api/v1/animals/search?kind=cat`)
-    .then(response => response.json())
-    .then(
-      (jsonifiedResponse) => {
-        dispatch(getAnimalsSuccess(jsonifiedResponse));
-      })
-      .catch((error) => {
-        dispatch(getAnimalsFailure(error));
-      });
+    // return fetch(`https://afternoon-headland-99155.herokuapp.com/api/v1/animals/search?kind=cat`)
+    // .then(response => response.json())
+    // .then(
+    //   (jsonifiedResponse) => {
+    //     dispatch(getAnimalsSuccess(jsonifiedResponse));
+    //   })
+    //   .catch((error) => {
+    //     dispatch(getAnimalsFailure(error));
+    //   });
   }
 }
+
+// export const addCatApiCall = () => {
+//   return dispatch => {
+
+//   }
+// }
 
 export const requestAnimals = () => ({
   type: c.REQUEST_ANIMALS
