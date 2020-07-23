@@ -3,15 +3,16 @@
 #### Author: **Celeste Field, Austin Butler, Chee Murakami**
 #### July 20, 2020
 
+#### https://urban-tails-shelter.herokuapp.com/ ####
+
 ### Description
 
-_This application uses React with create-react-app, components, JSX, and a custom built API. This is a animal shelter site for cats, that will allow the user to select animals up for adoption and see their photos and save them to the database made with Rails and Postgres._
-https://afternoon-headland-99155.herokuapp.com/api/v1/animals/
+_This application uses React with create-react-app, components, JSX, and a custom built API. This is a animal shelter site for cats, that will allow the user to select animals up for adoption and see their photos and save them to the database made with Rails and Postgres.(Rails API: https://afternoon-headland-99155.herokuapp.com/api/v1/animals/)_
 
 
 ## Setup/Installation Requirements
 
-* _Clone Repository from GitHub : https://github.com/cheemurakami/flower_shop
+* _Clone Repository from GitHub : https://github.com/cheemurakami/urban_tails_shelter
 * _Open folder in Virtual Studio Code (or your text editor of choice)_
 * _Open your terminal in Virtual Studio Code & type code . this will open all files associated with this app. 
 * _Before you initialize GIT, be sure to delete the already exisiting .git file by running this command in your terminal $rm -rf .git_
