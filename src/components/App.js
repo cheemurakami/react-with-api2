@@ -5,8 +5,7 @@ import Header from "./Header";
 import AnimalDetail from "./AnimalDetail";
 import AnimalCreateForm from "./AnimalCreateForm";
 import AnimalEditForm from "./AnimalEditForm";
-import MissionStatement from "./MissionStatement";
-// import MissionStatement2 from "./MissionStatement2";
+import { MissionStatement} from "./MissionStatement";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -20,7 +19,6 @@ function App() {
           <Route exact path="/newanimals" component={AnimalCreateForm} />
           <Route exact path="/editanimals" component={AnimalEditForm} />
           <Route exact path="/missionstatement" component={MissionStatement}/>
-          {/* <Route exact path="/missionstatement" component={MissionStatement2}/> */}
         </Switch>
       </React.Fragment>
     </Router>

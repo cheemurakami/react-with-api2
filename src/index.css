@@ -131,6 +131,10 @@ code {
   border-radius: 10px;
 }
 
+.form-container .form-label{
+  text-align: left;
+}
+
 .form-header {
   color:white;
   margin-bottom: 10px;

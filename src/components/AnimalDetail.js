@@ -42,10 +42,10 @@ function AnimalDetail(props) {
         <button onClick={deleteAnimal}>Delete me</button>
       </div>
       <div className="returnList">
-        <Link to={"/editanimals"}>Edit me</Link>
+        <button><Link to={"/editanimals"}>Edit me</Link></button>
       </div>
       <div className="returnList">
-        <Link to={"/"}>Return to Animals List</Link>
+        <button><Link to={"/"}>Return to Animals List</Link></button>
       </div>
     </React.Fragment>
   );

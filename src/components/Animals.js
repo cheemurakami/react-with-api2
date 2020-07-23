@@ -5,8 +5,6 @@ import { useHistory } from "react-router-dom";
 import * as a from "./../actions";
 import { Link } from "react-router-dom";
 import Image from 'react-bootstrap/Image'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 
 
@@ -41,8 +39,6 @@ function Animals(props) {
   } else {
     return (
       <React.Fragment>
-        {/* <h3 className="cats">Our Cats ~ ^°∀°^ </h3> */}
-        
         <Container className="container">
           <div className="row">
 
@@ -68,9 +64,7 @@ function Animals(props) {
           ))}
           </div>
           </Container>
-        {/* <Link to="/newanimals">
-          <button>Add a new animal</button>
-        </Link> */}
+
       </React.Fragment>
     );
   }
